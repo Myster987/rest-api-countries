@@ -5,7 +5,7 @@ export const useGetCountries = () => {
         queryKey: ["countries"],
         queryFn: async () => {
             const res = await fetch(
-                "https://restcountries.com/v3.1/independent?status=true&fields=name,capital,population,flags,continents"
+                `${process.env.NEXT_PUBLIC_API}/independent?status=true&fields=name,capital,population,flags,continents`
             );
             const data: CountryType[] = await res.json();
             return data;
