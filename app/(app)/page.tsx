@@ -38,7 +38,9 @@ export default function Home() {
             </div>
             <CountriesList
                 countries={countries.filter((val) =>
-                    val.name.official.toLowerCase().includes(currentInput)
+                    val.name.official
+                        .toLowerCase()
+                        .includes(currentInput.toLowerCase())
                 )}
                 isLoading={countriesQuery.isLoading}
             />
